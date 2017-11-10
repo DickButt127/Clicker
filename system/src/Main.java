@@ -1,6 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -9,7 +10,7 @@ import javax.swing.JPanel;
 
 public class Main implements ActionListener {
 	
-	static int counter;
+	static long counter;
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Clicker");
@@ -18,6 +19,8 @@ public class Main implements ActionListener {
 		JButton button = new JButton(horusButton);
 		
 		counter = 0;
+		
+
 		
 		button.setMnemonic(KeyEvent.VK_ENTER);
 		button.addActionListener(new ActionListener() {
