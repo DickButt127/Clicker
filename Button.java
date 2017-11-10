@@ -1,12 +1,16 @@
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
-public class Button implements ActionListener{
+public class Button extends Component implements ActionListener{
 	
 	private int clicks;
 	private JButton button;
 	
 	public Button() {
-		setButton(new JButton("Hier klicken"));
+		button = new JButton("Fick äh Klick mich!");
 		clicks = 0;
 	}
 	
@@ -20,9 +24,10 @@ public class Button implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		
-		
+		if(button.getModel().isPressed()) {
+			this.clicks += 1;
+			View.setCounter(this.clicks);
+		}
 	}
 
 	public JButton getButton() {
